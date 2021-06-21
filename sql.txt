@@ -1,4 +1,5 @@
 Pending
     569 Median Employee Salary
+    603 Consecutive Available Seats
 
 
