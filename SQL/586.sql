@@ -1,5 +1,5 @@
 # Write your MySQL query statement below
-SELECT
+/*SELECT
     p.customer_number
 FROM
     (
@@ -12,4 +12,12 @@ FROM
     ORDER BY cust_num DESC
     ) AS p
 LIMIT 1;
-    
+*/
+
+SELECT
+    customer_number
+FROM
+    Orders
+GROUP BY customer_number
+ORDER BY COUNT(customer_number) DESC
+LIMIT 1;
