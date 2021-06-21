@@ -23,12 +23,14 @@ SELECT
     t1.Salary
 FROM
 (
-    SELECT  Id,
-            Company,
-            Salary,
-            row_number() OVER(PARTITION BY Company ORDER BY Salary) AS rownum,
-            COUNT(1) OVER(PARTITION BY Company) AS num
-        from Employee
+    SELECT
+        Id,
+        Company,
+        Salary,
+        row_number() OVER(PARTITION BY Company ORDER BY Salary) AS rownum,
+        COUNT(1) OVER(PARTITION BY Company) AS num
+    FROM
+        Employee
 ) t1
 WHERE
     t1.rownum >= num / 2
