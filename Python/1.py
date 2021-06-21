@@ -8,9 +8,9 @@ class Solution(object):
         
         dict = {}
         
-        for i, num in enumerate(nums):
+        for index, num in enumerate(nums):
             
             if target - num in dict:
-                return [dict[target - num], i]
+                return [dict[target - num], index]
                 
-            dict[num] = i
+            dict[num] = index
