@@ -6,5 +6,11 @@ class Solution:
         
         #reverse
         str_y = str_x[::-1]
+        
+        
+        
+        while x > 0:
+            x, tmp = divmod(x, 10)
+            reverse = reverse * 10 + tmp
             
         return True if (str_x == str_y) else False 
