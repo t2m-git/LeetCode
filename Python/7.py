@@ -9,10 +9,12 @@ class Solution:
 
         x = int(lst_reverse)
         
-        if (x <= 2**31 -1) & (x >= -2**31):
+        ##if (x <= 2**31 -1) & (x >= -2**31):
+        ##
+        ##    return x
+        ##
+        ##else:
+        ##    
+        ##    return 0
         
-            return x
-        
-        else:
-            
-            return 0
+        return x if (x <= 2**31 -1) & (x >= -2**31) else 0
