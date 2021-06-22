@@ -12,10 +12,12 @@ class Solution:
             if (num in ["V", "X"] and pre_value == 1) or \
                (num in ["L", "C"] and pre_value == 10) or \
                (num in ["D", "M"] and pre_value == 100):
-                
+               
+                #When realizing the num has a relationship with pre_value, subtract the double
                 ans += dict[num] - 2 * pre_value 
             
             else:
+                #Always add the num based on the number in the dict
                 ans += dict[num]
                 pre_value = dict[num]
         
