@@ -9,3 +9,19 @@ FROM
     FROM
         point
     ) AS s;
+
+/*
+SELECT
+    MIN(ABS(p1.x - p2.x)) as shortest
+FROM
+    point as p1
+INNER JOIN point as p2 ON p1.x <> p2.x;
+
+
+SELECT 
+    MIN(ABS(p1.x - p2.x)) as shortest
+FROM
+    point p1, point p2
+WHERE
+    p1.x <> p2.x;
+*/
