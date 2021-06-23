@@ -12,3 +12,18 @@ FROM
     ) AS m
 WHERE
     m.count = 1;
+
+
+/*
+SELECT
+    MAX(m.num) AS num
+FROM
+    (
+    SELECT
+        num
+    FROM
+        my_numbers
+    GROUP BY num
+    HAVING COUNT(num) = 1
+    ) AS m;
+*/
