@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
+/*
 WITH total AS (
 
 SELECT
@@ -35,3 +36,23 @@ WHERE
         ORDER BY (s.cnt_s / t.cnt) DESC
         LIMIT 1
     );
+*/
+
+# Write your MySQL query statement below
+SELECT
+    s.question_id AS 'survey_log'
+FROM
+    survey_log AS s
+GROUP BY s.question_id
+ORDER BY COUNT(s.answer_id)
+            / 
+        #COUNT(*) DESC
+        COUNT(
+            CASE
+                WHEN s.action IN ('show', 'skip') THEN s.action
+                ELSE NULL
+        END
+        ) DESC
+LIMIT 0, 1;
+
+
