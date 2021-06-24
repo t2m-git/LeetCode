@@ -1,6 +1,7 @@
 Pending
     569_Median Employee Salary
     603_Consecutive Available Seats
+    612_Shortest Distance in a Plane
     1083_Sales Analysis II
 
 
