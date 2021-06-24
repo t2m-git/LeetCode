@@ -12,4 +12,5 @@ SELECT
         ELSE 'Leaf'
         END AS Type
 FROM
-    tree;
+    tree
+ORDER BY id asc;
