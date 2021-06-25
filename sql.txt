@@ -3,6 +3,7 @@ Pending
     603_Consecutive Available Seats
     612_Shortest Distance in a Plane
     614_Second Degree Follower
+    626_Exchange Seats
     1083_Sales Analysis II
 
 
