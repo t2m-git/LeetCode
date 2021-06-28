@@ -1,2 +1,5 @@
 Pending
   13_Roman to Integer
+  26_Remove Duplicates from Sorted Array
+    An error happened to my code. Still checking a reason.
+    
