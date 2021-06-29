@@ -16,6 +16,7 @@ FROM
     
     ) AS t
 WHERE
-    t.activity_date BETWEEN '2019-06-30' - INTERVAL 90 DAY AND '2019-06-30'
+    #t.activity_date BETWEEN '2019-06-30' - INTERVAL 90 DAY AND '2019-06-30'
+    DATEDIFF('2019-06-30', t.activity_date) <= 90
     AND t.my_row = 1
-GROUP BY activity_date;
+GROUP BY activity_date; 
