@@ -11,4 +11,5 @@ Pending
     1113_Reported Posts
     1126_Active Businesses
     1164_Product Price at a Given Date
-    1517_Find Users With Valid E-Mails
+    1517_Find Users With Valid E-Mails 
+        Regular expressions
