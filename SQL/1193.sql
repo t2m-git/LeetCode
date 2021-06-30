@@ -1,6 +1,8 @@
 # Write your MySQL query statement below
 SELECT
     SUBSTR(trans_date, 1, 7) AS month,
+    ##NG due to format of month
+    ##CONCAT(YEAR(trans_date), '-', MONTH(trans_date)) AS month,
     country,
     COUNT(id) AS trans_count,
     SUM(CASE WHEN state = 'approved' THEN 1 ELSE 0 END) AS approved_count,
