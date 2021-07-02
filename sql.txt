@@ -1,5 +1,6 @@
 Pending
     569_Median Employee Salary
+    571_Find Median Given Frequency of Numbers
     579_Find Cumulative Salary of an Employee
     603_Consecutive Available Seats
     612_Shortest Distance in a Plane
