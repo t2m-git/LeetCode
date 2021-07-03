@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
+/*
 SELECT
     s2.visited_on,
     s2.amount,
@@ -23,3 +24,14 @@ FROM
 WHERE
     row_num >= 7
 ORDER BY visited_on;
+*/
+
+SELECT 
+    c1.visited_on,
+    SUM(c2.amount) AS amount,
+    round(SUM(c2.amount)/7,2) AS average_amount
+FROM (SELECT DISTINCT visited_on FROM customer) c1, customer c2
+WHERE DATEDIFF(c1.visited_on, c2.visited_on) BETWEEN 0 AND 6
+GROUP BY visited_on
+ORDER BY visited_on
+LIMIT 6, 1000;
