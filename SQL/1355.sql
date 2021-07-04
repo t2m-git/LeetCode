@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
+/*
 WITH cte1 AS (
 
 SELECT
@@ -41,3 +42,15 @@ UNION ALL
 SELECT * FROM cte2
 
 )
+*/
+SELECT
+    DISTINCT activity
+FROM
+    (SELECT 
+        activity,
+        RANK() OVER (ORDER BY COUNT(activity) DESC) AS highest_participant,
+        RANK() OVER (ORDER BY COUNT(activity) ASC) AS lowest_participant
+    FROM
+        Friends
+    GROUP BY activity) AS temp
+    WHERE temp.highest_participant <> 1 AND temp.lowest_participant <> 1;
