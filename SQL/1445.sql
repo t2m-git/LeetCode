@@ -29,7 +29,7 @@ SELECT
 FROM
     CTE1 AS c1
 INNER JOIN CTE2 AS c2 ON c2.sale_date = c1.sale_date;
-*/
+
 WITH CTE AS (
 SELECT
     sale_date,
@@ -49,3 +49,10 @@ INNER JOIN CTE AS c2 ON c2.sale_date = c1.sale_date
 WHERE
     c1.fruit = 'apples'
     AND c2.fruit = 'oranges';
+*/
+
+SELECT 
+    s.sale_date, 
+    SUM(CASE WHEN s.fruit = 'oranges' THEN -1 * s.sold_num ELSE s.sold_num END) AS diff
+FROM sales s
+GROUP BY s.sale_date;
