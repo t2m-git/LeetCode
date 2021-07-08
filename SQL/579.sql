@@ -22,3 +22,21 @@ WHERE
 ORDER BY
     id,
     Month DESC;
+    
+    # Write your MySQL query statement below
+SELECT
+    s.ID,
+    s.Month,
+    s.cum_sal AS Salary
+FROM
+(
+SELECT
+    *,
+    SUM(Salary) OVER (PARTITION BY Id ORDER BY Month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS cum_sal,
+    RANK() OVER (PARTITION BY Id ORDER BY Month DESC) AS my_rank
+FROM
+    Employee
+) AS s
+WHERE
+    my_rank <> 1
+ORDER BY 1, 2 DESC;
