@@ -16,7 +16,7 @@ LEFT JOIN Ads AS a2 ON a2.customer_id = p2.customer_id
 WHERE a2.customer_id IS NULL;
 
 */
-
+#Solution 1
 SELECT
     p.session_id
 FROM
@@ -24,3 +24,13 @@ FROM
 LEFT JOIN Ads AS a ON a.customer_id = p.customer_id
 GROUP BY p.session_id
 HAVING SUM(CASE WHEN a.timestamp BETWEEN p.start_time AND p.end_time THEN 1 ELSE 0 END) = 0;
+
+#Solution 2
+SELECT
+    p.session_id
+FROM
+    playback AS p
+LEFT JOIN Ads AS a ON a.customer_id = p.customer_id
+AND timestamp BETWEEN p.start_time AND p.end_time
+WHERE
+    a.ad_id IS NULL;
