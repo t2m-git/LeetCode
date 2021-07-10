@@ -14,6 +14,7 @@ WITH cte AS
     HAVING amounts > a.max_income
     ORDER BY 1,2)
 
+
 SELECT
     c1.account_id
 FROM
@@ -21,4 +22,6 @@ FROM
 INNER JOIN cte AS c2 ON c2.account_id = c1.account_id
 WHERE
     ABS(TIMESTAMPDIFF(month, c1.month, c2.month)) = 1
+    #NG : DATEDIFF IS FOR a DAY
+    #ABS(DATEDIFF(c1.month, c2.month)) = 1
 GROUP BY 1;
