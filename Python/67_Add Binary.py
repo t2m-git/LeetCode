@@ -6,7 +6,7 @@ class Solution:
         :rtype: str
         """
         
-        l1, l2 = len(a), len(b)
+        """l1, l2 = len(a), len(b)
         carry = 0
         lst_la = []
         lst_lb = []
@@ -34,3 +34,28 @@ class Solution:
                     lst_la.append(1)
 
         return "".join(str(x) for x in lst_la[::-1])
+        """
+        n = max(len(a), len(b))
+        a, b = a.zfill(n), b.zfill(n)
+        
+        carry = 0
+        answer = []
+        for i in range(n - 1, -1, -1):
+            if a[i] == '1':
+                carry += 1
+            if b[i] == '1':
+                carry += 1
+                
+            if carry % 2 == 1:
+                answer.append('1')
+            else:
+                answer.append('0')
+            
+            carry //= 2
+        
+        if carry == 1:
+            answer.append('1')
+        #answer.reverse()
+        answer = answer[::-1]
+        
+        return ''.join(answer)
