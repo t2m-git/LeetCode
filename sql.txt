@@ -2,7 +2,7 @@ Pending
     569_Median Employee Salary
     571_Find Median Given Frequency of Numbers
     579_Find Cumulative Salary of an Employee                   -> OK: SUM(Salary) OVER (PARTITION BY Id ORDER BY Month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)
-    603_Consecutive Available Seats
+    603_Consecutive Available Seats                             -> OK: Simple join and Union or LAG() and LEAD()
     612_Shortest Distance in a Plane
     614_Second Degree Follower
     626_Exchange Seats
