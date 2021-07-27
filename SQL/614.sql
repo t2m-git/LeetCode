@@ -1,4 +1,5 @@
 # Write your MySQL query statement below
+/*
 SELECT
     f1.followee AS follower,
     # Why do I have to use "DISTINCT fi.follower"?
@@ -27,3 +28,30 @@ HAVING
     
     )
 ORDER BY f1.followee ASC;
+
+SELECT
+    followee AS follower,
+    COUNT(DISTINCT follower) AS num
+FROM
+    follow
+WHERE
+    followee IN (
+    
+    SELECT
+        follower
+    FROM
+        follow
+        
+    )
+GROUP BY 1
+ORDER BY 1;
+*/
+
+SELECT
+    f2.followee AS follower,
+    COUNT(DISTINCT f2.follower) AS num
+FROM
+    follow f1
+INNER JOIN follow f2 ON f1.follower= f2.followee
+GROUP BY f2.followee
+ORDER BY f2.followee;
