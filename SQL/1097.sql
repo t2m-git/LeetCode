@@ -10,8 +10,8 @@ WITH cte AS (
 
 SELECT
     c.install_date AS install_dt ,
-    COUNT(DISTINCT player_id) AS installs ,
-    ROUND(IFNULL(rent_play_cnt,0) / COUNT(DISTINCT player_id),2) AS Day1_retention
+    COUNT(DISTINCT c.player_id) AS installs ,
+    ROUND(IFNULL(s.rent_play_cnt,0) / COUNT(DISTINCT c.player_id),2) AS Day1_retention
 FROM
     cte AS c
 LEFT JOIN
